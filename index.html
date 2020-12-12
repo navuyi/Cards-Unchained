@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Karteczki</title>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.js"
+			integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM="
+			crossorigin="anonymous">
+	</script>
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style>
+		html, body{
+			margin: 0;
+			height: 100%;
+			overflow: hidden;
+			background-color: #1698f5;
+		}
+		.noselect {
+			-webkit-touch-callout: none; /* iOS Safari */
+			-webkit-user-select: none; /* Safari */
+			-khtml-user-select: none; /* Konqueror HTML */
+			-moz-user-select: none; /* Old versions of Firefox */
+			-ms-user-select: none; /* Internet Explorer/Edge */
+			user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+		}
+		
+	</style>
+</head>
+<body>
+	
+	<div id="usernamePane">
+		<div id="usernameTitle" class="noselect"> Username </div> 
+		<form>
+			<input type="text" id="usernameInput">
+			<div id="usernameButton" type="submit"><div id="usernameButtonText" class="noselect"> Go </div></div>
+		</form>
+	</div>
+	<div id="teamA" class="teamButton"><div id="teamAText" class="noselect teamText"> A </div></div>
+	<div id="teamB" class="teamButton"><div id="teamBText" class="noselect teamText"> B </div></div>
+	<div id="playerIndicator"><div id="playerIndicatorText" class="noselect">  </div></div> 
+	<div id="timerBar">
+		<select id="timeValueSelect">
+			<option value="3"> 3 </option>
+			<option value="50"> 50 </option>
+			<option value="60" selected> 60 </option>
+			<option value="90"> 90 </option>
+			<option value="100"> 100 </option>
+			<option value="110"> 110 </option>
+			<option value="120"> 120 </option>
+		</select>
+		<div id="cardsPrivileges" class="noselect"> PLAY </div>
+		<div id="timeDisplay" class="noselect"> - </div>
+		<button id="startButton" class="button"> START </button>
+		<button id ="stopButton" class="button"> STOP </button>
+	</div>
+	<div id="cardBar">
+		<div id="toggleBar"></div>
+		<select id="selColor"> 
+			<option value="black"> Black </option>
+			<option value="blue"> Blue </option>
+			<option value="red"> Red </option>
+			<option value="green"> Green </option>
+			<option value="yellow"> Yellow </option>
+		</select>
+		<select id="selWidth"> 
+			<option value="3"> 3 </option>
+			<option value="5"> 5 </option>
+			<option value="10"> 10 </option>
+			<option value="20"> 20 </option>
+			<option value="30"> 30 </option>
+		</select>
+		<button id="clearButton" class="button"> Clear </button>
+		<input type="text" id="cardInput" placeholder="   Dodaj karteczke">
+		<button id="cardAddButton" class="button"> Dodaj </button>
+	</div>
+	<canvas id="canvas"> </canvas>
+</body>
+	<script src="utils/initTimer.js"></script>
+	<script src="utils/initCardBar.js"></script>
+	<script src="utils/Card.js"></script>
+	<script src="client.js"></script>
+	<script src="utils/initSketch.js"></script>
+	<script src="utils/playerTeamTag.js"></script>
+</html>

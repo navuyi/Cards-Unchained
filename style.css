@@ -1,0 +1,310 @@
+:root{
+	/* Timer constants */
+	--TIMER_WIDTH: 600px;
+	--TIMER_HEIGHT: 50px;
+	--TIMER_COLOR: #3e3e3e;
+
+	/* Card add constants */
+	--CARD_WIDTH: calc(800px*1.3);
+	--CARD_HEIGHT: 65px;
+	--CARD_COLOR: #3e3e3e;
+	--CARD_PRIVILEGES_HEIGHT: 2vh;
+}
+.teamButton{
+	width: 3vw;
+	height: 3vw;
+	background-image: linear-gradient(#e9d66a, #e77204);
+	
+	position: absolute;
+	border-style: solid;
+	border-width: 0px;
+	border-radius: 10px;
+	font-size: 2vw;
+	font-weight: 1000;
+}
+.teamButton:hover{
+	background-image: linear-gradient(#f18d5f, #e70404);
+}
+.teamButton:active{
+	box-shadow: 4px 8px #3e3e3e;
+	transform: translate(2px, 4px);
+}
+#teamA{
+	left: 5%;
+	top:1%;
+}
+#teamB{
+	right: 5%;
+	top:1%;
+}
+.teamText{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+#playerIndicator{
+	width: 8vw;
+	height: 5vh;
+	background-color: #3e3e3e;
+	border-style: solid;
+	border-width: 1px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	position: absolute;
+	left: 20%;
+	top: -2px;
+}
+#playerIndicatorText{
+	position: absolute;
+	color: rgb(223, 219, 219);
+	top:50%;
+	left:50%;
+	transform: translate(-50%, -50%);
+	font-size: 18px;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Timer CSS */
+#timerBar{
+	width: var(--TIMER_WIDTH);
+	height: var(--TIMER_HEIGHT);
+	background-color: var(--TIMER_COLOR);
+	position: absolute;
+	top: -1px;
+	left: calc(50vw - var(--TIMER_WIDTH)/2);
+
+	
+	border-bottom-style:  solid;
+	border-left-style: solid;
+	border-right-style: solid;
+
+	border-bottom-width: 5px;
+	border-left-width: 3px;
+	border-right-width: 2px;
+	border-bottom-right-radius: 20px;
+	border-bottom-left-radius: 20px;
+
+	text-align: center;
+}
+
+#timeDisplay{
+	width: 100px;
+	height: 25px;
+	background-color: #e3e3e3;
+	
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+
+	border-style: solid;
+	border-color: transparent;
+	border-radius: 100px;
+
+	font-size: 20px;
+}
+#cardsPrivileges{
+	width: 3vw;
+	height: var(--CARD_PRIVILEGES_HEIGHT);
+	position: absolute;
+	top: calc(var(--TIMER_HEIGHT)/2 - var(--CARD_PRIVILEGES_HEIGHT)/2);
+	left: 28%;
+	background-image: linear-gradient(#dad876, #a37104);
+	border-style: solid;
+	border-width: 0px;
+	border-radius: 10px;
+}
+#cardsPrivileges:hover{
+	transition: 0.5s;
+	transform: translate(1px,1px);
+}
+#cardsPrivileges:active{
+	background-image: linear-gradient(#700606, #be2222);
+}
+#timeValueSelect{
+	width: 75px;
+	height: 25px;
+
+	border-style: solid;
+	border-color: transparent;
+	border-radius: 10px;
+
+	position: absolute;
+	left: 15%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#startButton{
+	position: absolute;
+	left: 75%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#stopButton{
+	position: absolute;
+	left: 90%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+.button{
+	width: 55px;
+	height: 25px;
+	font-size: 10px;
+	font-family: Verdana, sens-serif;
+	border-radius: 5px;
+}
+
+/* Card add bar CSS */
+
+#cardBar{
+	width: var(--CARD_WIDTH);
+	height: var(--CARD_HEIGHT);
+	background-color: var(--CARD_COLOR);
+	position: absolute;
+	top: calc(100vh - var(--CARD_HEIGHT));
+	left: calc(50vw - var(--CARD_WIDTH)/2);
+
+	border-top-style: solid;
+	border-left-style: solid;
+	border-right-style: solid;
+
+	border-top-width: 2px;
+	border-left-width: 2px;
+	border-right-width: 2px;
+	border-top-right-radius: 20px;
+	border-top-left-radius: 20px;
+
+
+}
+#toggleBar{
+	width: calc(var(--CARD_WIDTH)/4);
+	height: 10px;
+	background-color: #6a6c6e;
+
+	position: relative;
+	left: 50%;
+	top: 0%;
+	transform: translate(-50%, 0%);
+
+	border-style: double;
+	border-width: 1px;
+	border-radius: 5px;
+}
+#toggleBar:hover{
+	background-color: #8c8d8f;
+}
+
+
+#cardInput{
+	width: calc(var(--CARD_WIDTH)/1.9);
+	height: 20px;
+	background-color: #e3e3e3;
+
+	position: relative;
+	left: 55%;
+	top: 20%;
+	transform: translate(-50%, 0%);
+
+	border-style: solid;
+	border-radius: 5px;
+}
+#cardAddButton{
+	position: relative;
+	left: 35%;
+	top: 20%;
+	transform: translate(-50%, 0%);
+	font-size: 12px;
+}
+
+#selColor{
+	position: absolute;
+	left: 0%;
+	top: 20%;
+	transform: translate(50%, 50%);
+
+	width: 75px;
+	height: 25px;
+
+	border-style: solid;
+	border-color: transparent;
+	border-radius: 10px;
+}
+#selWidth{
+	position: absolute;
+	left: 10%;
+	top: 20%;
+	transform: translate(50%, 50%);
+
+	width: 55px;
+	height: 25px;
+
+	border-style: solid;
+	border-color: transparent;
+	border-radius: 10px;
+}
+#clearButton{
+	position: absolute;
+	left: 17%;
+	top: 20%;
+	transform: translate(50%, 50%);
+}
+
+#usernamePane{
+	width: 20vw;
+	height: 30vh;
+	background-color: #3e3e3e;
+	opacity: 0.9;
+
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+
+	border-style:solid;
+	border-width: 0px;
+	border-radius: 20px;
+}
+#usernameTitle{
+	font-size: 2vw;
+	color: #e3e3e3;
+	position: absolute;
+	top: 10%;
+	left:50%;
+	transform: translateX(-50%);
+}
+#usernameInput{
+	position: absolute;
+	left: 50%;
+	top: 60%;
+	transform: translateX(-50%);
+	width: 50%;
+	height: 10%;
+	font-size: 20px;
+	border-style: solid;
+	border-width: 0px;
+	border-radius: 5px;
+}
+#usernameButton{
+	width: 4vw;
+	height: 3vh;
+	position: absolute;
+	top: 80%;
+	left: 50%;
+	transform: translateX(-50%);
+	background-image: linear-gradient(#dad876, #a37104);
+	border-style: solid;
+	border-width: 0px;
+	border-radius: 10px;
+}
+#usernameButtonText{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+#usernameButton:active{
+	background-image: linear-gradient(#99100b, #ec7a2f);
+}
