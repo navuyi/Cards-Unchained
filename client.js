@@ -1,14 +1,31 @@
 var myName = null;
 var playerName = null;
 
+// Disable all game elements except for the username pane (so players can not mess around with bars etc.)
+document.getElementById("teamA").style.visibility = "hidden";
+document.getElementById("teamB").style.visibility = "hidden";
+document.getElementById("playerIndicator").style.visibility = "hidden";
+document.getElementById("timerBar").style.visibility = "hidden";
+document.getElementById("cardBar").style.visibility = "hidden";
+
+// Create username button listener to enter the main game view
 document.getElementById("usernameButton").addEventListener("click", function(){
 	var input = document.getElementById("usernameInput");
 	if(input!="" || input!=" " || input!="  "){
 		myName = input.value;
 		console.log(myName);
 		document.getElementById("usernamePane").style.visibility = "hidden";
+
+	// Enable all the game elements
+	document.getElementById("teamA").style.visibility = "visible";
+	document.getElementById("teamB").style.visibility = "visible";
+	document.getElementById("playerIndicator").style.visibility = "visible";
+	document.getElementById("timerBar").style.visibility = "visible";
+	document.getElementById("cardBar").style.visibility = "visible";
+
+	document.body.style.backgroundImage = "none";
+	document.body.style.backgroundColor = "#4b4b4b";
 	}
-	
 });
 
 //document.body.addEventListener("dblclick", fullscreen);

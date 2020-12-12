@@ -31,24 +31,35 @@ function startTimer(timeValue){
 			outOfTimeSignal();
 		}
 	}, 1000);
-}
+	// Start pulsation of playerIndicator element
+	document.getElementById("playerIndicator").style.animation = "pulse 5s infinite";
+};
 
 function startTimerSignal(timeValue){
 	socket.emit("startTimer", timeValue);
-}
+};
 
 // Create visual effect when time is over, reset timer
 function outOfTime(){
+	
 	document.body.style.backgroundColor = "#ff0000";
 	document.body.style.transition = "background-color 1000ms linear";
+	
+
+	// Change background color back to first look
 	var back = setTimeout(function(){
-		document.body.style.backgroundColor = "#1698f5";
+		document.body.style.backgroundColor = "#4b4b4b";
 		document.body.style.transition = "background-color 2000ms linear";
 		console.log("Dzialam");
 	}, 1100);
 	clearInterval(countdown);
 	timeDisplay.innerHTML = "-";
 	countdown = null;
+
+	// Clear player indicator field and stop pulsation of playerIndicator element
+	document.getElementById("playerIndicatorText").innerHTML="";
+	document.getElementById("playerIndicator").style.animation = null;
+	
 };
 
 // Send out of time signal to server
@@ -67,6 +78,7 @@ document.getElementById("cardsPrivileges").addEventListener("click", function(){
 	// Change playerName to my name
 	playerName = myName
 	document.getElementById("playerIndicatorText").innerHTML = playerName;
+	
 });
 
 

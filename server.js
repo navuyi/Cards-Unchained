@@ -68,7 +68,10 @@ io.sockets.on('connection', function(socket){
 		socket.broadcast.emit("movePlayerTeamTag", data);
 	});
 
-	
+	// Handle player disconnect
+	socket.on("disconnect", function(socket){
+		console.log("[SERVER] User disconnected");
+	});
 
 
 });

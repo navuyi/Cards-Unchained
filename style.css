@@ -10,6 +10,7 @@
 	--CARD_COLOR: #3e3e3e;
 	--CARD_PRIVILEGES_HEIGHT: 2vh;
 }
+
 .teamButton{
 	width: 3vw;
 	height: 3vw;
@@ -54,6 +55,8 @@
 	position: absolute;
 	left: 20%;
 	top: -2px;
+
+	/* animation: pulse 3s infinite; */
 }
 #playerIndicatorText{
 	position: absolute;
@@ -64,6 +67,19 @@
 	font-size: 18px;
 	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+/* Keyframes below are used in initTimer.js to start and end pulsation of playerIndicator element*/
+@keyframes pulse{
+	0%{
+		background-color: #e1f061;
+	}
+	50%{
+		background-color: #910303;
+	}
+	100%{
+		background-color: #e1f061;
+	}
+}
+
 
 /* Timer CSS */
 #timerBar{
